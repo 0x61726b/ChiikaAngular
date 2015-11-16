@@ -11,4 +11,4 @@
  *
  * @version @{chiika.ng.version}
  */
-angular.module('chiikaAngular', ['homePage', 'animeList', 'animeTable','mangaList','mangaTable']);
+angular.module('chiikaAngular', ['ngMaterial','md.data.table','homePage', 'animeList', 'animeTable','mangaList','mangaTable']);

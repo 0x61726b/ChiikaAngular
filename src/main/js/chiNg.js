@@ -11,4 +11,17 @@
  *
  * @version @{chiika.ng.version}
  */
-angular.module('chiikaAngular', ['ngMaterial','md.data.table','homePage', 'animeList', 'animeTable','mangaList','mangaTable']);
+       angular
+           .module('chiika', ['ngMaterial', 'md.data.table','homePage','animeList','animeTable','menuDemoPosition'])
+           .config(function($mdThemingProvider) {
+
+               $mdThemingProvider.theme('default')
+                   .primaryPalette('teal')
+                   .accentPalette('indigo');
+
+           })
+           .controller('AppCtrl', function($scope, $mdSidenav) {
+               $scope.openLeftMenu = function() {
+                   $mdSidenav('left').toggle();
+               };
+           });

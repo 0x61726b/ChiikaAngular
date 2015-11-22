@@ -1,16 +1,4 @@
 /*global chiika,angular */
-/**
- *
- *
- *
- *
- * @name settings
- * @namespace
- *
- * @memberOf chiika
- *
- * @version @{chiika.ng.version}
- */
 angular.module('animeList', [])
         .controller('AnimeListCtrl', ['$scope', '$q', '$timeout',
             function ($scope, $q, $timeout) {
@@ -21,52 +9,221 @@ angular.module('animeList', [])
                     limit: 5,
                     page: 1
                 };
+                $scope.test = "5";
                 //Default values
                 $scope.watchingList = {
                     "count": 4,
-                    "data":
-                            [{
-                                    "title": 'Owarimonogatari',
-                                    "progress": {"value":0.4},
-                                    "progressString": "7/25",
-                                    "type": 'Tv',
-                                    "score": {"value":8},
-                                    "season": 'Fall 2015'
-                                }, {
-                                    "title": 'Rakudai Kishi no Cavalary',
-                                    "progress": {"value":0.2},
-                                    "progressString": "2/25",
-                                    "type": 'Tv',
-                                    "score": '-',
-                                    "season": 'Fall 2015'
-                                }, {
-                                    "title": 'Noragami Aragoto',
-                                    "progress": {"value":0.75},
-                                    "progressString": "20/25",
-                                    "type": 'Tv',
-                                    "score": '-',
-                                    "season": 'Fall 2015'
-                                }, {
-                                    "title": 'Gakusen Asterisk',
-                                    "progress": {"value":0.9},
-                                    "progressString": "24/25",
-                                    "type": 'Tv',
-                                    "score": '-',
-                                    "season": 'Fall 2015'
-                                }]
+                    "data": [{
+                            "title": 'Owarimonogatari',
+                            "progress": {
+                                "value": 0.4
+                            },
+                            "progressString": "7/25",
+                            "type": 'Tv',
+                            "score": {
+                                "value": 8
+                            },
+                            "season": 'Fall 2015'
+                        }, {
+                            "title": 'Rakudai Kishi no Cavalary',
+                            "progress": {
+                                "value": 0.2
+                            },
+                            "progressString": "2/25",
+                            "type": 'Tv',
+                            "score": '-',
+                            "season": 'Fall 2015'
+                        }, {
+                            "title": 'Noragami Aragoto',
+                            "progress": {
+                                "value": 0.75
+                            },
+                            "progressString": "20/25",
+                            "type": 'Tv',
+                            "score": '-',
+                            "season": 'Fall 2015'
+                        }, {
+                            "title": 'Gakusen Asterisk',
+                            "progress": {
+                                "value": 0.9
+                            },
+                            "progressString": "24/25",
+                            "type": 'Tv',
+                            "score": '-',
+                            "season": 'Fall 2015'
+                        }]
+                };
+                $scope.completedList = {
+                    "count": 4,
+                    "data": [{
+                            "title": 'Owarimonogatari',
+                            "progress": {
+                                "value": 0.4
+                            },
+                            "progressString": "7/25",
+                            "type": 'Tv',
+                            "score": {
+                                "value": 8
+                            },
+                            "season": 'Fall 2015'
+                        }, {
+                            "title": 'Rakudai Kishi no Cavalary',
+                            "progress": {
+                                "value": 0.2
+                            },
+                            "progressString": "2/25",
+                            "type": 'Tv',
+                            "score": '-',
+                            "season": 'Fall 2015'
+                        }, {
+                            "title": 'Noragami Aragoto',
+                            "progress": {
+                                "value": 0.75
+                            },
+                            "progressString": "20/25",
+                            "type": 'Tv',
+                            "score": '-',
+                            "season": 'Fall 2015'
+                        }, {
+                            "title": 'Gakusen Asterisk',
+                            "progress": {
+                                "value": 0.9
+                            },
+                            "progressString": "24/25",
+                            "type": 'Tv',
+                            "score": '-',
+                            "season": 'Fall 2015'
+                        }]
+                };
+                $scope.droppedList = {
+                    "count": 4,
+                    "data": [{
+                            "title": 'Owarimonogatari',
+                            "progress": {
+                                "value": 0.4
+                            },
+                            "progressString": "7/25",
+                            "type": 'Tv',
+                            "score": {
+                                "value": 8
+                            },
+                            "season": 'Fall 2015'
+                        }, {
+                            "title": 'Rakudai Kishi no Cavalary',
+                            "progress": {
+                                "value": 0.2
+                            },
+                            "progressString": "2/25",
+                            "type": 'Tv',
+                            "score": '-',
+                            "season": 'Fall 2015'
+                        }, {
+                            "title": 'Noragami Aragoto',
+                            "progress": {
+                                "value": 0.75
+                            },
+                            "progressString": "20/25",
+                            "type": 'Tv',
+                            "score": '-',
+                            "season": 'Fall 2015'
+                        }, {
+                            "title": 'Gakusen Asterisk',
+                            "progress": {
+                                "value": 0.9
+                            },
+                            "progressString": "24/25",
+                            "type": 'Tv',
+                            "score": '-',
+                            "season": 'Fall 2015'
+                        }]
+                };
+                $scope.onHoldList = {
+                    "count": 4,
+                    "data": [{
+                            "title": 'Owarimonogatari',
+                            "progress": {
+                                "value": 0.4
+                            },
+                            "progressString": "7/25",
+                            "type": 'Tv',
+                            "score": {
+                                "value": 8
+                            },
+                            "season": 'Fall 2015'
+                        }, {
+                            "title": 'Rakudai Kishi no Cavalary',
+                            "progress": {
+                                "value": 0.2
+                            },
+                            "progressString": "2/25",
+                            "type": 'Tv',
+                            "score": '-',
+                            "season": 'Fall 2015'
+                        }, {
+                            "title": 'Noragami Aragoto',
+                            "progress": {
+                                "value": 0.75
+                            },
+                            "progressString": "20/25",
+                            "type": 'Tv',
+                            "score": '-',
+                            "season": 'Fall 2015'
+                        }, {
+                            "title": 'Gakusen Asterisk',
+                            "progress": {
+                                "value": 0.9
+                            },
+                            "progressString": "24/25",
+                            "type": 'Tv',
+                            "score": '-',
+                            "season": 'Fall 2015'
+                        }]
+                };
+                $scope.ptwList = {
+                    "count": 4,
+                    "data": [{
+                            "title": 'Owarimonogatari',
+                            "progress": {
+                                "value": 0.4
+                            },
+                            "progressString": "7/25",
+                            "type": 'Tv',
+                            "score": {
+                                "value": 8
+                            },
+                            "season": 'Fall 2015'
+                        }, {
+                            "title": 'Rakudai Kishi no Cavalary',
+                            "progress": {
+                                "value": 0.2
+                            },
+                            "progressString": "2/25",
+                            "type": 'Tv',
+                            "score": '-',
+                            "season": 'Fall 2015'
+                        }, {
+                            "title": 'Noragami Aragoto',
+                            "progress": {
+                                "value": 0.75
+                            },
+                            "progressString": "20/25",
+                            "type": 'Tv',
+                            "score": '-',
+                            "season": 'Fall 2015'
+                        }, {
+                            "title": 'Gakusen Asterisk',
+                            "progress": {
+                                "value": 0.9
+                            },
+                            "progressString": "24/25",
+                            "type": 'Tv',
+                            "score": '-',
+                            "season": 'Fall 2015'
+                        }]
                 };
 
                 $scope.getTypes = function () {
                     return ['Tv'];
-                };
-                $scope.onpagechange = function (page, limit) {
-                    var deferred = $q.defer();
-
-                    $timeout(function () {
-                        deferred.resolve();
-                    }, 2000);
-
-                    return deferred.promise;
                 };
 
                 $scope.onorderchange = function (order) {
@@ -78,8 +235,28 @@ angular.module('animeList', [])
 
                     return deferred.promise;
                 };
+                $scope.onpagechange = function (page, limit) {
+                    var deferred = $q.defer();
 
-            }]);
+                    $timeout(function () {
+                        deferred.resolve();
+                    }, 2000);
+
+                    return deferred.promise;
+                };
+
+            }
+        ])
+        .directive('animeListDir', function () {
+            return {
+                scope: {},
+                restrict: 'E',
+                templateUrl: 'animeList.html',
+                controller: 'AnimeListCtrl',
+                controllerAs: 'ctrl',
+                replace: false
+            };
+        });
 
 angular.module('animeTable', [])
         .controller('AnimeTableCtrl', ['$scope',
@@ -94,7 +271,7 @@ angular.module('animeTable', [])
                 },
                 restrict: 'E',
                 templateUrl: 'animeListTable.html',
-                replace: true,
+                replace: false,
                 controller: 'AnimeTableCtrl',
                 controllerAs: 'ctrl'
             };

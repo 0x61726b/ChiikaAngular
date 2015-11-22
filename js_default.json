@@ -2,5 +2,6 @@
     "target/dist/prod/js/homeModule.js",
     "target/dist/prod/js/animeListModule.js",
     "target/dist/prod/js/mangaListModule.js",
+    "target/dist/prod/js/menuModules.js",
     "target/dist/prod/js/chiNg.js"
 ]

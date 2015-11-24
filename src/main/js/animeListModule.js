@@ -1,4 +1,4 @@
-/*global chiika,angular */
+/*global chiika,angular,_userAnimeList,console,JSON */
 angular.module('animeList', [])
         .controller('AnimeListCtrl', ['$scope', '$q', '$timeout',
             function ($scope, $q, $timeout) {
@@ -9,12 +9,18 @@ angular.module('animeList', [])
                     limit: 5,
                     page: 1
                 };
-                $scope.test = "5";
+                $scope.test1 = 5;
+                $scope.userAnimeList = {};
+                $scope.updateAngularElement = function(args)
+                {
+                    console.log(args[0].anime);
+                    $scope.watchingList.data[0] = args[0].anime;
+                };
                 //Default values
                 $scope.watchingList = {
                     "count": 4,
                     "data": [{
-                            "title": 'Owarimonogatari',
+                            "series_title": 'Owarimonogatari',
                             "progress": {
                                 "value": 0.4
                             },
@@ -25,7 +31,7 @@ angular.module('animeList', [])
                             },
                             "season": 'Fall 2015'
                         }, {
-                            "title": 'Rakudai Kishi no Cavalary',
+                            "series_title": 'Rakudai Kishi no Cavalary',
                             "progress": {
                                 "value": 0.2
                             },
@@ -34,7 +40,7 @@ angular.module('animeList', [])
                             "score": '-',
                             "season": 'Fall 2015'
                         }, {
-                            "title": 'Noragami Aragoto',
+                            "series_title": 'Noragami Aragoto',
                             "progress": {
                                 "value": 0.75
                             },
@@ -43,7 +49,7 @@ angular.module('animeList', [])
                             "score": '-',
                             "season": 'Fall 2015'
                         }, {
-                            "title": 'Gakusen Asterisk',
+                            "series_title": 'Gakusen Asterisk',
                             "progress": {
                                 "value": 0.9
                             },
@@ -225,7 +231,6 @@ angular.module('animeList', [])
                 $scope.getTypes = function () {
                     return ['Tv'];
                 };
-
                 $scope.onorderchange = function (order) {
                     var deferred = $q.defer();
 
